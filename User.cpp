@@ -53,20 +53,24 @@ using std::endl;
     //Description: removes course from User profile 
     bool User::remove(const Course& toBeRemoved) {
         unsigned int level = (toBeRemoved.getNumber()/100);
+        cout << level << endl;
         if (level > MAX_LEVEL-1) {
             return false; //course level is too high
         }
-        auto first = this->History[level]->begin();
-        auto last = this->History[level]->end();
-        auto it = find(first, last, toBeRemoved);
-
-       if (it == this->History[level]->end()) {
-            return false; //element not found
-        } 
         
-        //this->History[level]->erase(it);
-        this->ElementCount[level]--;
-        return true;
+        for (int x = 0; x < this->ElementCount[level]; x++) {
+
+            if (this->History[level]->at(x).getNumber() == toBeRemoved.getNumber()) {
+                cout << "element found" << endl;
+                this->History[level]->erase(this->History[level]->begin() + x);
+                this->ElementCount[level]--;
+                return true;
+            }
+        }
+
+
+        return false;
+
         
     }
 

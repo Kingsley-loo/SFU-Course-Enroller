@@ -24,13 +24,13 @@ Course::~Course() {
 }
 
 //Parameterized Constructor without preReq vector 
-Course::Course(string newSubject, const unsigned int newNumber, string newTitle, string newInfo) : Subject(newSubject), 
+Course::Course(string newSubject, int newNumber, string newTitle, string newInfo) : Subject(newSubject), 
         Number(newNumber), Title(newTitle), Info(newInfo), preReq() {
 
 }
 
 //Paramerized Constructor with preReq vector
-Course::Course(string newSubject, const unsigned int newNumber, string newTitle, string newInfo, vector<Course *> newPreReq) : 
+Course::Course(string newSubject, int newNumber, string newTitle, string newInfo, vector<Course *> newPreReq) : 
         Subject(newSubject), Number(newNumber), Title(newTitle), Info(newInfo), preReq(newPreReq) {
 
 }
@@ -75,3 +75,4 @@ void Course::printCourse() const{
 bool Course::operator==(const Course& rhs){
     return (this->Subject == rhs.Subject && this->Number == rhs.Number);
 }
+

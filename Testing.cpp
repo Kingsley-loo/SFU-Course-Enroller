@@ -32,11 +32,14 @@ int main() {
 
     me->insert(course1);
     me->print();
+    cout << endl;
     me->insert(course2);
     me->insert(course3);
     me->print();
+    cout << endl;
+    me->remove(course1);
     //me->remove(course1);
-    //me->print();
+    me->print();
 
     delete me;
     return 0;

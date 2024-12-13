@@ -16,7 +16,7 @@ class Course {
     private: 
 
         string Subject; //ex. CMPT, MATH, MACM
-        const unsigned int Number; //ID assigned to course (ex. 125, 225, 295)
+        int Number; //ID assigned to course (ex. 125, 225, 295)
         string Title; //name of Course given by SFU (ex. CMPT 310's title would be "Intro to Artifical Intelligence")
         string Info; //Description of what will be taught in the course, provided by SFU or the instructor
         
@@ -31,10 +31,10 @@ class Course {
     ~Course();
 
     //Parameterized Constructor without preReq vector 
-    Course(string newSubject, const unsigned int newNumber, string newTitle, string newInfo);
+    Course(string newSubject, int newNumber, string newTitle, string newInfo);
 
     //Paramerized Constructor with preReq vector
-    Course(string newSubject, const unsigned int newNumber, string newTitle, string newInfo, vector<Course *> newPreReq);
+    Course(string newSubject, int newNumber, string newTitle, string newInfo, vector<Course *> newPreReq);
 
     //Description: returns Subject of Course 
     string getSubject() const;
