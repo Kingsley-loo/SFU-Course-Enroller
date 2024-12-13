@@ -62,16 +62,14 @@ using std::endl;
 
             if (this->History[level]->at(x).getNumber() == toBeRemoved.getNumber()) {
                 cout << "element found" << endl;
-                this->History[level]->erase(this->History[level]->begin() + x);
+                this->History[level]->erase(this->History[level]->begin() + x); //only works when Number of couse isnt const?
                 this->ElementCount[level]--;
                 return true;
             }
         }
 
-
         return false;
 
-        
     }
 
     //Description: removes all courses from User profile 
@@ -88,10 +86,12 @@ using std::endl;
     void User::print() const {
        for (unsigned int x = 0; x < MAX_LEVEL; x++) {
             for (unsigned int y = 0; y < this->ElementCount[x]; y++) {
+                //retrieves the elements of the Course
                 string aSubject = this->History[x]->at(y).getSubject();
                 unsigned int aNumber = this->History[x]->at(y).getNumber();
                 string aTitle = this->History[x]->at(y).getTitle();    
                 string aInfo = this->History[x]->at(y).getInfo();
+                //printing it nicely 
                 cout << "Course Name: " << aSubject << " " << aNumber << endl;
                 cout << "Course Title: " << aTitle << endl;
                 cout << "Description: " << aInfo << endl;
