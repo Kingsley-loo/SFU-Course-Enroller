@@ -2,6 +2,7 @@
 #include "User.h"
 #include <iostream>
 #include <string>
+#include "json.hpp"
 
 
 using std::cout;
@@ -43,11 +44,12 @@ int main() {
 
     while (loop != false){
         char choice;
-
+        cout << endl;
         cout << "e - enroll in a course" << endl;
         cout << "d - drop a course" << endl;
         cout << ">";
         cin >> choice ;
+        cout << "you chose " << choice << endl;
 
         if (choice = 'e') {
             
