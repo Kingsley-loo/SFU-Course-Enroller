@@ -11,6 +11,7 @@ Author: Kingsley Loo-Xu
 #define USER_H
 
 
+
 #include <string>
 #include <vector>
 #include "Course.h"
@@ -20,7 +21,7 @@ class User {
 
     private:
 
-    constexpr static unsigned int MAX_LEVEL = 4;
+    static constexpr unsigned int MAX_LEVEL = 4;
     
 
     //Stores courses in an Course poitner datatype array, each index is an array of Courses organized by level 
